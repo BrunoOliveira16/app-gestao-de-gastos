@@ -1,4 +1,5 @@
 export const categories = [
+  'Outros',
   'Alimentação',
   'Transporte',
   'Lazer',
@@ -7,6 +8,5 @@ export const categories = [
   'Saúde',
   'Roupas',
   'Utilidades Domésticas',
-  'Eletrônicos',
-  'Outros'
+  'Eletrônicos'
 ]

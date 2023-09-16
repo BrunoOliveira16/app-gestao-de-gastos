@@ -21,6 +21,13 @@ export const S = {
     background-color: ${theme.colors.thirdyColor};
     color: ${theme.colors.secondColor};
     display: block;
+
+    @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background: none;
+    }
   `,
   Header: styled.ul`
     width: 100%;
@@ -28,12 +35,24 @@ export const S = {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+
+    @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
+      display: none;
+    }
   `,
   HeaderItem: styled.li`
     width: 20%;
     font-size: 1.3rem;
     font-weight: bold;
     text-align: center;
+
+    @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
+      font-size: 1rem;
+    }
+  `,
+  BodyContent: styled.div`
+    display: flex;
+    background-color: ${theme.colors.textThirdyColor};
   `,
   Body: styled.ul`
     width: 100%;
@@ -42,58 +61,39 @@ export const S = {
     align-items: center;
     padding: 0.5rem;
     background-color: ${theme.colors.textThirdyColor};
+
+    @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
   `,
   BodyItem: styled.li`
     width: 20%;
     font-size: 1.1rem;
     text-align: center;
+
+    @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
+      width: 45%;
+      font-size: 1rem;
+
+      ${(props) =>
+        props.$textBold &&
+        `
+        font-weight: bold;
+        font-size: 1.1rem;
+      `}
+    }
   `,
   BodyAction: styled.li`
     width: 20%;
     display: flex;
-    gap: 0.5rem;
+    align-items: center;
     justify-content: center;
-  `
+    gap: 0.5rem;
 
-  //   Card: styled.div`
-  //     width: 100%;
-  //     padding: 1rem;
-  //     display: flex;
-  //     gap: 0.8rem;
-  //     background-color: ${theme.colors.secondColor};
-  //   `,
-  //   CardLogo: styled.div`
-  //     width: 10%;
-  //     display: flex;
-  //     align-items: center;
-  //   `,
-  //   CardBody: styled.div`
-  //     width: 85%;
-  //     display: flex;
-  //     flex-direction: column;
-  //     gap: 0.5rem;
-  //   `,
-  //   CardFeature: styled.div`
-  //     width: 5%;
-  //     display: flex;
-  //     flex-direction: column;
-  //     align-items: end;
-  //     justify-content: center;
-  //     gap: 1rem;
-  //   `,
-  //   CardContent: styled.div`
-  //     display: flex;
-  //     justify-content: space-between;
-  //     align-items: center;
-  //   `,
-  //   TextPrimary: styled.h3`
-  //     font-size: 1.1rem;
-  //     font-weight: bold;
-  //   `,
-  //   TextSecond: styled.p`
-  //     font-size: 0.8rem;
-  //     font-style: italic;
-  //     font-weight: 100;
-  //     color: ${theme.colors.textThirdyColor};
-  //   `
+    @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
+      width: 30%;
+      flex-direction: column;
+    }
+  `
 }

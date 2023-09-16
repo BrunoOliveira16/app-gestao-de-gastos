@@ -24,7 +24,8 @@ export const S = {
     gap: 1rem;
 
     @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
-      width: 50%;
+      width: 100%;
+      padding: 0;
       flex-direction: column;
       gap: 5px;
 
@@ -38,6 +39,7 @@ export const S = {
     font-size: 1.2rem;
 
     @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
+      width: 100%;
       font-size: 1rem;
     }
   `,

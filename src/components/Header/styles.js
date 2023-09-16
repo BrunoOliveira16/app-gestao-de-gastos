@@ -18,6 +18,7 @@ export const S = {
 
     @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
       display: block;
+      padding: 8px;
     }
   `,
   HeaderBrand: styled.div`
@@ -35,6 +36,10 @@ export const S = {
 
     h1 {
       color: ${theme.colors.textThirdyColor};
+
+      @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
+        font-size: 1.2rem;
+      }
     }
   `
 }

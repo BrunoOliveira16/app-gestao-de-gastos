@@ -66,21 +66,22 @@ const MyExpenses = () => {
       <RegisterBar />
       <S.Container>
         <S.Header>
-          <S.HeaderItem>Categoria</S.HeaderItem>
           <S.HeaderItem>Descrição</S.HeaderItem>
           <S.HeaderItem>Valor</S.HeaderItem>
+          <S.HeaderItem>Categoria</S.HeaderItem>
           <S.HeaderItem>Data</S.HeaderItem>
           <S.HeaderItem>Ação</S.HeaderItem>
         </S.Header>
         {!loading &&
-          sortedExpenses.map((expense) => {
-            console.log(expense)
+          sortedExpenses.map((expense, index) => {
             return (
-              <S.Body key={expense.id}>
-                <S.BodyItem>{expense.category}</S.BodyItem>
-                <S.BodyItem>{expense.description}</S.BodyItem>
-                <S.BodyItem>R$ {expense.value}</S.BodyItem>
-                <S.BodyItem>{expense.date}</S.BodyItem>
+              <S.BodyContent key={index}>
+                <S.Body key={expense.id}>
+                  <S.BodyItem $textBold>{expense.description}</S.BodyItem>
+                  <S.BodyItem $textBold>R$ {expense.value}</S.BodyItem>
+                  <S.BodyItem>{expense.category}</S.BodyItem>
+                  <S.BodyItem>{expense.date}</S.BodyItem>
+                </S.Body>
                 <S.BodyAction>
                   <BsPencilSquare
                     onClick={() => handleEdit(expense)}
@@ -91,7 +92,7 @@ const MyExpenses = () => {
                     title="remover"
                   />
                 </S.BodyAction>
-              </S.Body>
+              </S.BodyContent>
             )
           })}
       </S.Container>
