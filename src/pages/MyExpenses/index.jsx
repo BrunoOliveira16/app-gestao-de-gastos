@@ -2,14 +2,19 @@ import { BsPencilSquare, BsTrash } from 'react-icons/bs'
 import { S } from './styles'
 import FilterBar from '../../components/FilterBar'
 import RegisterBar from '../../components/RegisterBar'
+import useFetchExpenses from '../../hooks/useFetchExpenses'
+import useManagerExpenses from '../../hooks/useManagerExpenses'
 
 const MyExpenses = () => {
+  const { expenses, loading } = useFetchExpenses()
+  const { handleDeleteExpenses } = useManagerExpenses()
+
   const handleEdit = () => {
     console.log('editar')
   }
 
-  const handleDelete = () => {
-    console.log('deletar')
+  const handleDelete = async (item) => {
+    await handleDeleteExpenses(item)
   }
 
   return (
@@ -25,107 +30,29 @@ const MyExpenses = () => {
           <S.HeaderItem>Data</S.HeaderItem>
           <S.HeaderItem>Ação</S.HeaderItem>
         </S.Header>
-        <S.Body>
-          <S.BodyItem>Alimentação</S.BodyItem>
-          <S.BodyItem>Mercadinho da esquina</S.BodyItem>
-          <S.BodyItem>R$ 30,00</S.BodyItem>
-          <S.BodyItem>20/09/2023</S.BodyItem>
-          <S.BodyAction>
-            <BsPencilSquare onClick={() => handleEdit()} title="editar" />
-            <BsTrash onClick={() => handleDelete()} title="remover" />
-          </S.BodyAction>
-        </S.Body>
-        <S.Body>
-          <S.BodyItem>Alimentação</S.BodyItem>
-          <S.BodyItem>Mercadinho da esquina</S.BodyItem>
-          <S.BodyItem>R$ 30,00</S.BodyItem>
-          <S.BodyItem>20/09/2023</S.BodyItem>
-          <S.BodyAction>
-            <BsPencilSquare onClick={() => handleEdit()} />
-            <BsTrash onClick={() => handleDelete()} />
-          </S.BodyAction>
-        </S.Body>
-        <S.Body>
-          <S.BodyItem>Alimentação</S.BodyItem>
-          <S.BodyItem>Mercadinho da esquina</S.BodyItem>
-          <S.BodyItem>R$ 30,00</S.BodyItem>
-          <S.BodyItem>20/09/2023</S.BodyItem>
-          <S.BodyAction>
-            <BsPencilSquare onClick={() => handleEdit()} />
-            <BsTrash onClick={() => handleDelete()} />
-          </S.BodyAction>
-        </S.Body>
-        <S.Body>
-          <S.BodyItem>Alimentação</S.BodyItem>
-          <S.BodyItem>Mercadinho da esquina</S.BodyItem>
-          <S.BodyItem>R$ 30,00</S.BodyItem>
-          <S.BodyItem>20/09/2023</S.BodyItem>
-          <S.BodyAction>
-            <BsPencilSquare onClick={() => handleEdit()} />
-            <BsTrash onClick={() => handleDelete()} />
-          </S.BodyAction>
-        </S.Body>
+        {!loading &&
+          expenses.map((expense) => {
+            console.log(expense)
+            return (
+              <S.Body key={expense.id}>
+                <S.BodyItem>{expense.category}</S.BodyItem>
+                <S.BodyItem>{expense.description}</S.BodyItem>
+                <S.BodyItem>R$ {expense.value}</S.BodyItem>
+                <S.BodyItem>{expense.date}</S.BodyItem>
+                <S.BodyAction>
+                  <BsPencilSquare
+                    onClick={() => handleEdit(expense)}
+                    title="editar"
+                  />
+                  <BsTrash
+                    onClick={() => handleDelete(expense)}
+                    title="remover"
+                  />
+                </S.BodyAction>
+              </S.Body>
+            )
+          })}
       </S.Container>
-
-      {/* <S.Container>
-        <S.Card>
-          <S.CardLogo>
-            <h2>img</h2>
-          </S.CardLogo>
-          <S.CardBody>
-            <S.CardContent>
-              <S.TextPrimary>Almoço hshajshajsa</S.TextPrimary>
-              <S.TextPrimary>R$ 10,00</S.TextPrimary>
-            </S.CardContent>
-            <S.CardContent>
-              <S.TextSecond>Alimentação</S.TextSecond>
-              <S.TextSecond>15/10/2023</S.TextSecond>
-            </S.CardContent>
-          </S.CardBody>
-          <S.CardFeature>
-            <BsPencilSquare onClick={() => handleEdit()} />
-            <BsTrash onClick={() => handleDelete()} />
-          </S.CardFeature>
-        </S.Card>
-        <S.Card>
-          <S.CardLogo>
-            <h2>img</h2>
-          </S.CardLogo>
-          <S.CardBody>
-            <S.CardContent>
-              <S.TextPrimary>Almoço hshajshajsa</S.TextPrimary>
-              <S.TextPrimary>R$ 10,00</S.TextPrimary>
-            </S.CardContent>
-            <S.CardContent>
-              <S.TextSecond>Alimentação</S.TextSecond>
-              <S.TextSecond>15/10/2023</S.TextSecond>
-            </S.CardContent>
-          </S.CardBody>
-          <S.CardFeature>
-            <BsPencilSquare onClick={() => handleEdit()} />
-            <BsTrash onClick={() => handleDelete()} />
-          </S.CardFeature>
-        </S.Card>
-        <S.Card>
-          <S.CardLogo>
-            <h2>img</h2>
-          </S.CardLogo>
-          <S.CardBody>
-            <S.CardContent>
-              <S.TextPrimary>Almoço hshajshajsa</S.TextPrimary>
-              <S.TextPrimary>R$ 10,00</S.TextPrimary>
-            </S.CardContent>
-            <S.CardContent>
-              <S.TextSecond>Alimentação</S.TextSecond>
-              <S.TextSecond>15/10/2023</S.TextSecond>
-            </S.CardContent>
-          </S.CardBody>
-          <S.CardFeature>
-            <BsPencilSquare onClick={() => handleEdit()} />
-            <BsTrash onClick={() => handleDelete()} />
-          </S.CardFeature>
-        </S.Card>
-      </S.Container> */}
     </>
   )
 }

@@ -26,15 +26,15 @@ const Navbar = () => {
 
   return (
     <nav>
-      <S.List showMenu={showMenu}>
+      <S.List $showmenu={showMenu}>
         {!user && (
           <>
-            <S.ListItem onClick={handleShowMenu} showMenu={showMenu}>
+            <S.ListItem onClick={handleShowMenu} $showmenu={showMenu}>
               <NavLink id="home" to="/">
                 Inicio
               </NavLink>
             </S.ListItem>
-            <S.ListItem onClick={handleShowMenu} showMenu={showMenu}>
+            <S.ListItem onClick={handleShowMenu} $showmenu={showMenu}>
               <NavLink id="login" to="/auth">
                 Login
               </NavLink>
@@ -43,17 +43,17 @@ const Navbar = () => {
         )}
         {user && (
           <>
-            <S.ListItem onClick={handleShowMenu} showMenu={showMenu}>
+            <S.ListItem onClick={handleShowMenu} $showmenu={showMenu}>
               <NavLink id="dashboard" to="/dashboard">
                 Dashboard
               </NavLink>
             </S.ListItem>
-            <S.ListItem onClick={handleShowMenu} showMenu={showMenu}>
+            <S.ListItem onClick={handleShowMenu} $showmenu={showMenu}>
               <NavLink id="myExpenses" to="/myExpenses">
                 Despesas
               </NavLink>
             </S.ListItem>
-            <S.ListItem onClick={handleShowMenu} showMenu={showMenu}>
+            <S.ListItem onClick={handleShowMenu} $showmenu={showMenu}>
               <ImExit title="logout" onClick={handleLogout} />
             </S.ListItem>
           </>

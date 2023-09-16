@@ -1,14 +1,34 @@
 import { useState } from 'react'
+import useManagerExpenses from '../../hooks/useManagerExpenses'
 import { S } from './styles'
 
 const RegisterBar = () => {
   const [description, setDescription] = useState('')
   const [value, setValue] = useState(0)
   const [category, setCategory] = useState('')
-  const [date, setDate] = useState(null)
+  const [date, setDate] = useState('')
+  const { handleAddExpenses, error } = useManagerExpenses()
 
-  const handleCreateExpenses = (e) => {
+  const handleCreateExpenses = async (e) => {
     e.preventDefault()
+
+    const item = {
+      description,
+      value: parseFloat(value),
+      category,
+      date
+    }
+
+    const sucess = await handleAddExpenses(item)
+
+    if (sucess) {
+      setDescription('')
+      setValue(0)
+      setCategory('')
+      setDate('')
+    } else {
+      console.log(error)
+    }
   }
 
   return (

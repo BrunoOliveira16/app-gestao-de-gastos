@@ -12,7 +12,7 @@ export const S = {
       transition: all 1s;
 
       ${(props) =>
-        props.showMenu &&
+        props.$showmenu &&
         `
           width: 50%;
           height: 100vh;
@@ -50,7 +50,7 @@ export const S = {
 
     @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
       display: none;
-      ${(props) => props.showMenu && `display: flex;`}
+      ${(props) => props.$showmenu && `display: flex;`}
     }
 
     a,
