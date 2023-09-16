@@ -1,27 +1,27 @@
-import { useState } from 'react'
 import { RiSortDesc, RiSortAsc } from 'react-icons/ri'
 import { S } from './styles'
 
-const FilterBar = () => {
-  const [sortOrder, setSortOrder] = useState('desc')
-
-  const handleSortClick = () => {
-    if (sortOrder === 'desc') {
-      setSortOrder('asc')
-    } else {
-      setSortOrder('desc')
-    }
-  }
-
+const FilterBar = ({
+  handleCategoryChange,
+  categories,
+  handleSortClick,
+  sortOrder
+}) => {
   return (
     <S.Container>
       <S.Content>
         <h3>Filtrar Categoria:</h3>
-        <S.Select name="select">
-          <option>Todos</option>
-          <option>Alimentação</option>
-          <option>Educação</option>
-          <option>Lazer</option>
+        <S.Select
+          id="category"
+          onChange={(e) => handleCategoryChange(e.target.value)}
+          required
+        >
+          <option value="all">Todos</option>
+          {categories.map((category) => (
+            <option value={category} key={category}>
+              {category}
+            </option>
+          ))}
         </S.Select>
       </S.Content>
       <S.Content>

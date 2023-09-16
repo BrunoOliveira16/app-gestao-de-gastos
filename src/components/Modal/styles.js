@@ -37,6 +37,11 @@ export const S = {
     margin-bottom: 1rem;
     padding: 8px;
   `,
+  Select: styled.select`
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding: 8px;
+  `,
   ContainerButton: styled.div`
     display: flex;
     gap: 2%;

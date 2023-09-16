@@ -8,9 +8,11 @@ import useFetchExpenses from '../../hooks/useFetchExpenses'
 import useManagerExpenses from '../../hooks/useManagerExpenses'
 
 const MyExpenses = () => {
-  const { expenses, loading } = useFetchExpenses()
+  const { expenses, loading, categories } = useFetchExpenses()
   const { handleDeleteExpenses, handleUpdateExpenses } = useManagerExpenses()
   const [editingExpense, setEditingExpense] = useState(null)
+  const [filteredCategory, setFilteredCategory] = useState('all')
+  const [sortOrder, setSortOrder] = useState('desc')
 
   const handleEdit = (expense) => {
     setEditingExpense(expense)
@@ -19,6 +21,31 @@ const MyExpenses = () => {
   const handleDelete = async (item) => {
     await handleDeleteExpenses(item)
   }
+
+  const handleCategoryChange = (category) => {
+    setFilteredCategory(category)
+  }
+
+  const handleSortClick = () => {
+    if (sortOrder === 'desc') {
+      setSortOrder('asc')
+    } else {
+      setSortOrder('desc')
+    }
+  }
+
+  const filteredExpenses = expenses.filter(
+    (expense) =>
+      filteredCategory === 'all' || expense.category === filteredCategory
+  )
+
+  const sortedExpenses = [...filteredExpenses].sort((a, b) => {
+    if (sortOrder === 'desc') {
+      return b.value - a.value
+    } else {
+      return a.value - b.value
+    }
+  })
 
   return (
     <S.MyExpenses>
@@ -30,7 +57,12 @@ const MyExpenses = () => {
         />
       )}
       <S.Title>Minhas Despesas</S.Title>
-      <FilterBar />
+      <FilterBar
+        categories={categories}
+        handleCategoryChange={handleCategoryChange}
+        handleSortClick={handleSortClick}
+        sortOrder={sortOrder}
+      />
       <RegisterBar />
       <S.Container>
         <S.Header>
@@ -41,7 +73,7 @@ const MyExpenses = () => {
           <S.HeaderItem>Ação</S.HeaderItem>
         </S.Header>
         {!loading &&
-          expenses.map((expense) => {
+          sortedExpenses.map((expense) => {
             console.log(expense)
             return (
               <S.Body key={expense.id}>

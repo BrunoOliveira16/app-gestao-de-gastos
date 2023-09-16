@@ -3,9 +3,9 @@ import theme from '../../theme'
 
 export const S = {
   Container: styled.div`
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     background-color: ${theme.colors.textThirdyColor};
@@ -16,7 +16,10 @@ export const S = {
     }
   `,
   Content: styled.div`
+    width: 50%;
+    padding: 0 1rem;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
 
@@ -31,7 +34,7 @@ export const S = {
     }
   `,
   Select: styled.select`
-    width: 95%;
+    width: 50%;
     font-size: 1.2rem;
 
     @media screen and (max-width: ${theme.breakpoints.mobileLG}) {

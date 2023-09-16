@@ -7,6 +7,7 @@ const useFetchExpenses = () => {
   const { auth } = useAuthentication()
   const user = auth.currentUser
   const [expenses, setExpenses] = useState([])
+  const [categories, setCategories] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -16,13 +17,20 @@ const useFetchExpenses = () => {
     const unsubscribe = onSnapshot(expensesRef, (snapShot) => {
       const expensesList = snapShot.docs.map((doc) => doc.data())
       setExpenses(expensesList)
+
+      //Cria uma lista de categorias do firestore
+      const uniqueCategories = [
+        ...new Set(expensesList.map((expense) => expense.category))
+      ]
+      setCategories(uniqueCategories)
+
       setLoading(false)
     })
 
     return () => unsubscribe()
   }, [user])
 
-  return { expenses, loading }
+  return { expenses, loading, categories }
 }
 
 export default useFetchExpenses

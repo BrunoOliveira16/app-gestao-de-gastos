@@ -55,6 +55,16 @@ export const S = {
       font-size: 1rem;
     }
   `,
+  Select: styled.select`
+    width: 100%;
+    padding: 2px;
+    font-size: 1.1rem;
+
+    @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
+      width: 95%;
+      font-size: 1rem;
+    }
+  `,
   Label: styled.label`
     font-size: 1.1rem;
     font-weight: bold;
@@ -64,14 +74,14 @@ export const S = {
     text-align: center;
     font-size: 1.2rem;
     font-weight: bold;
-    background-color: ${theme.colors.textSecondColor};
+    background-color: ${theme.colors.hoverPrimaryColor};
     color: ${theme.colors.textThirdyColor};
     border: none;
     border-radius: 5px;
     transition: all 0.6s;
 
     &:hover {
-      background-color: ${theme.colors.hoverPrimaryColor};
+      background-color: ${theme.colors.secondColor};
     }
 
     @media screen and (max-width: ${theme.breakpoints.mobileLG}) {

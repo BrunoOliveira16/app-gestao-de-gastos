@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import useManagerExpenses from '../../hooks/useManagerExpenses'
 import { S } from './styles'
+import { categories } from '../../utils/categories'
 
 const RegisterBar = () => {
   const [description, setDescription] = useState('')
@@ -56,13 +57,18 @@ const RegisterBar = () => {
         </S.InputContainer>
         <S.InputContainer>
           <S.Label>Categoria</S.Label>
-          <S.Input
-            type="text"
+          <S.Select
             id="category"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             required
-          />
+          >
+            {categories.map((category) => (
+              <option value={category} key={category}>
+                {category}
+              </option>
+            ))}
+          </S.Select>
         </S.InputContainer>
         <S.InputContainer>
           <S.Label>Data</S.Label>

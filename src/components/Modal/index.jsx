@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { S } from './styles'
+import { categories } from '../../utils/categories'
 
 const Modal = ({ expense, handleUpdateExpenses, closeModal }) => {
   const [description, setDescription] = useState(expense.description)
@@ -44,12 +45,18 @@ const Modal = ({ expense, handleUpdateExpenses, closeModal }) => {
             required
           />
           <S.Label>Categoria</S.Label>
-          <S.Input
-            type="text"
+          <S.Select
+            id="category"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
             required
-          />
+          >
+            {categories.map((category) => (
+              <option value={category} key={category}>
+                {category}
+              </option>
+            ))}
+          </S.Select>
           <S.Label>Data</S.Label>
           <S.Input
             type="date"
