@@ -2,13 +2,16 @@ import styled from 'styled-components'
 import theme from '../../theme'
 
 export const S = {
+  MyExpenses: styled.div`
+    position: relative;
+  `,
   Title: styled.h2`
     text-align: center;
     text-transform: uppercase;
-    margin-block: 2rem;
+    padding-block: 2rem;
 
     @media screen and (max-width: ${theme.breakpoints.mobile}) {
-      margin-block: 0.8rem;
+      padding-block: 0.8rem;
       font-size: 1rem;
     }
   `,

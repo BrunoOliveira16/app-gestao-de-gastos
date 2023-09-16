@@ -1,16 +1,19 @@
+import { useState } from 'react'
 import { BsPencilSquare, BsTrash } from 'react-icons/bs'
 import { S } from './styles'
 import FilterBar from '../../components/FilterBar'
 import RegisterBar from '../../components/RegisterBar'
+import Modal from '../../components/Modal'
 import useFetchExpenses from '../../hooks/useFetchExpenses'
 import useManagerExpenses from '../../hooks/useManagerExpenses'
 
 const MyExpenses = () => {
   const { expenses, loading } = useFetchExpenses()
-  const { handleDeleteExpenses } = useManagerExpenses()
+  const { handleDeleteExpenses, handleUpdateExpenses } = useManagerExpenses()
+  const [editingExpense, setEditingExpense] = useState(null)
 
-  const handleEdit = () => {
-    console.log('editar')
+  const handleEdit = (expense) => {
+    setEditingExpense(expense)
   }
 
   const handleDelete = async (item) => {
@@ -18,7 +21,14 @@ const MyExpenses = () => {
   }
 
   return (
-    <>
+    <S.MyExpenses>
+      {editingExpense && (
+        <Modal
+          expense={editingExpense}
+          handleUpdateExpenses={handleUpdateExpenses}
+          closeModal={() => setEditingExpense(null)}
+        />
+      )}
       <S.Title>Minhas Despesas</S.Title>
       <FilterBar />
       <RegisterBar />
@@ -53,7 +63,7 @@ const MyExpenses = () => {
             )
           })}
       </S.Container>
-    </>
+    </S.MyExpenses>
   )
 }
 

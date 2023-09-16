@@ -9,7 +9,7 @@ export default {
     textThirdyColor: '#FFFFFF',
     hoverPrimaryColor: '#1c3d65',
     errorColor: '#f03915',
-    ratingColor: '#f0cf15'
+    sucessColor: '#1c8701'
   },
   breakpoints: {
     mobile: '645px',

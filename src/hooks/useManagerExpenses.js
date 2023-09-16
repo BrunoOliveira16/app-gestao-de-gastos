@@ -7,7 +7,8 @@ import {
   query,
   where,
   getDocs,
-  deleteDoc
+  deleteDoc,
+  doc
 } from 'firebase/firestore'
 import { useAuthentication } from './useAuthentication'
 
@@ -19,7 +20,7 @@ const useManagerExpenses = () => {
     ? collection(db, 'users', user.uid, 'expenses')
     : null
 
-  // Cadastrar despesas
+  //Cadastrar despesas
   const handleAddExpenses = async (item) => {
     if (!user) return
 
@@ -55,7 +56,28 @@ const useManagerExpenses = () => {
     }
   }
 
-  return { handleAddExpenses, handleDeleteExpenses, error }
+  //Modificar despesas
+  const handleUpdateExpenses = async (item) => {
+    if (!user) return
+
+    try {
+      const docRef = doc(db, 'users', user.uid, 'expenses', item.id)
+      await updateDoc(docRef, item)
+      return true
+    } catch (error) {
+      setError(
+        'Ocorreu um erro ao atualizar a despesa, por favor tente novamente.'
+      )
+      return false
+    }
+  }
+
+  return {
+    handleAddExpenses,
+    handleDeleteExpenses,
+    handleUpdateExpenses,
+    error
+  }
 }
 
 export default useManagerExpenses
