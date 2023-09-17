@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# 🏆 App Despesa Inteligente
+![GitHub repo size](https://img.shields.io/github/repo-size/BrunoOliveira16/app-gestao-de-gastos?style=for-the-badge)
+![Languages](https://img.shields.io/github/languages/count/BrunoOliveira16/app-gestao-de-gastos?style=for-the-badge)
+![Status projeto](https://img.shields.io/badge/STATUS-CONCLUIDO-GREEN?style=for-the-badge)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ✔️ Tecnologias Utilizadas
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Styled-components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-F29D0C?style=for-the-badge&logo=firebase&logoColor=white)
 
-## Available Scripts
+<br>
 
-In the project directory, you can run:
+<img src="./src/assets/screenshot.jpg" alt="screenshot do projeto" />
 
-### `npm start`
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<div align="center">
+    <a href="https://app-gestao-de-gastos.vercel.app/" target="_blank">Visualize o projeto aqui</a>
+</div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📌 Resumo do Projeto
+Este é o Sistema de Gestão de Despesas, uma solução robusta e intuitiva para o gerenciamento eficaz de suas finanças pessoais. Desenvolvido com a tecnologia React e styled-components, este sistema oferece uma interface amigável e dinâmica para o controle de suas despesas.
 
-### `npm run build`
+Os usuários podem criar uma conta utilizando um endereço de e-mail e senha, com a autenticação segura provida pelo Firebase. Uma vez cadastrados, os usuários têm acesso a um conjunto completo de ferramentas para gerenciar suas despesas.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Os dados das despesas são armazenados no Firestore, garantindo a segurança e a integridade das informações. Os usuários podem adicionar, editar e excluir registros de despesas de forma dinâmica, proporcionando flexibilidade e controle total sobre suas finanças.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> **OPCIONAL:** Se quiser utilizar um usuario de testes, já com dados cadastrados, utilize o login: bruno@email | senha: 123456
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<br>
 
-### `npm run eject`
+## 🛠️ Como executar o projeto
+Para executar este projeto localmente em sua máquina, siga estas etapas:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Certifique-se de ter o Node.js instalado em sua máquina.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Clone este repositório em sua máquina local usando o comando ``git clone``.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Instale as dependências do projeto executando ``npm install`` no diretório do projeto.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Execute o comando ``npm start`` para rodar o projeto.
 
-## Learn More
+<br>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## ⭐ Desafio do Projeto
+### Possuir uma tela de login
+- Usuário deve inserir e-mail e senha
+- Acessar a aplicação em caso de sucesso ou receber feedback de erro
+- Usuários válidos podem estar engessados no código, sem problemas, o
+importante aqui é o desenvolvimento da tela
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Possuir uma ou mais telas para listagem e cadastro dos gastos
+- Apresentar listagem de todos os gastos cadastrados para o usuário
+logado
+- Registro de gastos deve possuir ao menos os seguintes campos: Valor,
+Data, Descrição, Categoria
+- Deve ser possível filtrar e ordenar os registros de gastos por categorias
+e/ou valor
+- Deve ser possível criar, editar e excluir registros de gastos do usuário
+logado
+- Número de telas, assim como fluxo de criação, atualização e leitura
+dos registros são livres
 
-### Code Splitting
+### Possuir uma tela para resumo dos gastos cadastrados
+- Deve apresentar ao usuário um resumo dos gastos cadastrados
+- Formato livre, mas será levado em consideração na avaliação da tela:
+- Apresentação - As informações apresentadas devem ser de fácil
+entendimento e utilização
+- Conteúdo - As informações apresentadas devem possuir alto valor
+para o usuário
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<br>
 
-### Analyzing the Bundle Size
+## 🙋🏻‍♂️ Autor
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+| [<img src="https://avatars.githubusercontent.com/u/103857382?v=4" width=115><br><sub>Bruno Oliveira</sub>](https://github.com/BrunoOliveira16) |
+| :---: |
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
