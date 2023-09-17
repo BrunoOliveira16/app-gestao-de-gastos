@@ -3,6 +3,10 @@ import theme from '../../theme'
 
 export const S = {
   Header: styled.header`
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
     background-color: ${theme.colors.secondColor};
   `,
   HeaderContainer: styled.div`

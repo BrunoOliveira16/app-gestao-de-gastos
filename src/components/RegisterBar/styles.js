@@ -13,7 +13,7 @@ export const S = {
     color: ${theme.colors.secondColor};
     border-radius: 5px;
 
-    @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
+    @media screen and (max-width: ${theme.breakpoints.tablet}) {
       flex-wrap: wrap;
       justify-content: center;
       padding: 0.8rem;
@@ -28,23 +28,16 @@ export const S = {
     justify-content: center;
     gap: 0.3rem;
 
+    @media screen and (max-width: ${theme.breakpoints.tablet}) {
+      width: 22.5%;
+      gap: 5px;
+    }
+
     @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
       width: 48%;
       gap: 1px;
     }
   `,
-  // Form: styled.form`
-  //   max-width: 40%;
-  //   margin: 2rem auto;
-
-  //   @media screen and (max-width: ${theme.breakpoints.tablet}) {
-  //     max-width: 60%;
-  //   }
-
-  //   @media screen and (max-width: ${theme.breakpoints.mobile}) {
-  //     max-width: 90%;
-  //   }
-  // `,
   Input: styled.input`
     width: 100%;
     padding: 2px;
@@ -72,6 +65,8 @@ export const S = {
   Button: styled.button`
     padding: 1.1rem 1.5rem;
     text-align: center;
+    display: flex;
+    justify-content: center;
     font-size: 1.2rem;
     font-weight: bold;
     background-color: ${theme.colors.hoverPrimaryColor};
@@ -84,7 +79,7 @@ export const S = {
       background-color: ${theme.colors.secondColor};
     }
 
-    @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
+    @media screen and (max-width: ${theme.breakpoints.tablet}) {
       width: 100%;
       padding: 0.5rem;
     }

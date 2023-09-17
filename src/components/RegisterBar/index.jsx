@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import useManagerExpenses from '../../hooks/useManagerExpenses'
 import { S } from './styles'
-import { categories } from '../../utils/categories'
+import { categories } from '../../utils/Lists'
 
 const RegisterBar = () => {
   const [description, setDescription] = useState('')

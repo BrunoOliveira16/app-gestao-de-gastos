@@ -29,7 +29,7 @@ const Register = ({ toggleShowLogin }) => {
     }
     const sucess = await createUser(user)
     if (sucess) {
-      navigate('/')
+      navigate('/myExpenses')
     }
   }
 

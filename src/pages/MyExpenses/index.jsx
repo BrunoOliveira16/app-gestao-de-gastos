@@ -14,6 +14,11 @@ const MyExpenses = () => {
   const [filteredCategory, setFilteredCategory] = useState('all')
   const [sortOrder, setSortOrder] = useState('desc')
 
+  function formatDate(isoString) {
+    const [year, month, day] = isoString.split('-')
+    return `${day}/${month}/${year}`
+  }
+
   const handleEdit = (expense) => {
     setEditingExpense(expense)
   }
@@ -80,7 +85,7 @@ const MyExpenses = () => {
                   <S.BodyItem $textBold>{expense.description}</S.BodyItem>
                   <S.BodyItem $textBold>R$ {expense.value}</S.BodyItem>
                   <S.BodyItem>{expense.category}</S.BodyItem>
-                  <S.BodyItem>{expense.date}</S.BodyItem>
+                  <S.BodyItem>{formatDate(expense.date)}</S.BodyItem>
                 </S.Body>
                 <S.BodyAction>
                   <BsPencilSquare

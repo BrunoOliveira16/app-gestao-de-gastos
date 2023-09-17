@@ -64,14 +64,11 @@ export const useAuthentication = () => {
     } catch (error) {
       let systemErrorMessage
 
-      if (error.message.includes('user-not-found')) {
-        systemErrorMessage = 'Usuario não encontrado'
-      } else if (error.message.includes('wrong-password')) {
-        systemErrorMessage = 'Senha incorreta, tente novamente'
+      if (error.message.includes('auth/invalid-login-credentials')) {
+        systemErrorMessage = 'E-mail ou Senha incorreta, tente novamente'
       } else {
         systemErrorMessage = 'Ocorreu um erro, por favor tente mais tarde.'
       }
-
       setLoading(false)
       setError(systemErrorMessage)
       return false

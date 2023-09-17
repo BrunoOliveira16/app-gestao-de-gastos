@@ -10,7 +10,7 @@ export const S = {
     justify-content: space-between;
     background-color: ${theme.colors.textThirdyColor};
 
-    @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
+    @media screen and (max-width: ${theme.breakpoints.tablet}) {
       width: 90%;
       padding: 1rem;
     }

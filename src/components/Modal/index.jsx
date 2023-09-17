@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { S } from './styles'
-import { categories } from '../../utils/categories'
+import { categories } from '../../utils/Lists'
 
 const Modal = ({ expense, handleUpdateExpenses, closeModal }) => {
   const [description, setDescription] = useState(expense.description)

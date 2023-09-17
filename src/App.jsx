@@ -29,7 +29,10 @@ function App() {
         <GlobalStyle />
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route
+            path="/"
+            element={!user ? <Home /> : <Navigate to="/myExpenses" />}
+          />
           <Route
             path="/auth"
             element={!user ? <Auth /> : <Navigate to="/" />}
