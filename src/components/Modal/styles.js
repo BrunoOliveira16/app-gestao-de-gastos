@@ -6,7 +6,7 @@ export const S = {
     width: 100%;
     height: 100vh;
     position: absolute;
-    background-color: ${theme.colors.overlayColor};
+    // background-color: ${theme.colors.overlayColor};
     z-index: 5;
   `,
   Modal: styled.div`

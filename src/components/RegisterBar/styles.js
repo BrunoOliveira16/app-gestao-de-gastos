@@ -34,7 +34,7 @@ export const S = {
     }
 
     @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
-      width: 48%;
+      width: 100%;
       gap: 1px;
     }
   `,
