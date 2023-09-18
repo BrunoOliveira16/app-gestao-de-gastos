@@ -70,13 +70,15 @@ const MyExpenses = () => {
       />
       <RegisterBar />
       <S.Container>
-        <S.Header>
-          <S.HeaderItem>Descrição</S.HeaderItem>
-          <S.HeaderItem>Valor</S.HeaderItem>
-          <S.HeaderItem>Categoria</S.HeaderItem>
-          <S.HeaderItem>Data</S.HeaderItem>
-          <S.HeaderItem>Ação</S.HeaderItem>
-        </S.Header>
+        <S.HeaderContent>
+          <S.Header>
+            <S.HeaderItem>Descrição</S.HeaderItem>
+            <S.HeaderItem>Valor</S.HeaderItem>
+            <S.HeaderItem>Categoria</S.HeaderItem>
+            <S.HeaderItem>Data</S.HeaderItem>
+          </S.Header>
+          <S.HeaderAction>Ação</S.HeaderAction>
+        </S.HeaderContent>
         {!loading &&
           sortedExpenses.map((expense, index) => {
             return (

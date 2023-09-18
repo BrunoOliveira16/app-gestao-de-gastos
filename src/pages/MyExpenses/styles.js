@@ -29,19 +29,23 @@ export const S = {
       background: none;
     }
   `,
+  HeaderContent: styled.div`
+    display: flex;
+    // background-color: ${theme.colors.textThirdyColor};
+  `,
   Header: styled.ul`
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 0;
 
     @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
       display: none;
     }
   `,
   HeaderItem: styled.li`
-    width: 20%;
+    width: 25%;
     font-size: 1.3rem;
     font-weight: bold;
     text-align: center;
@@ -50,6 +54,15 @@ export const S = {
       font-size: 1rem;
     }
   `,
+  HeaderAction: styled.li`
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+  `,
   BodyContent: styled.div`
     display: flex;
     background-color: ${theme.colors.textThirdyColor};
@@ -57,9 +70,9 @@ export const S = {
   Body: styled.ul`
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    // justify-content: space-between;
     align-items: center;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
     background-color: ${theme.colors.textThirdyColor};
 
     @media screen and (max-width: ${theme.breakpoints.mobileLG}) {
@@ -68,7 +81,7 @@ export const S = {
     }
   `,
   BodyItem: styled.li`
-    width: 20%;
+    width: 25%;
     font-size: 1.1rem;
     text-align: center;
 
