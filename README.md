@@ -28,7 +28,7 @@ Os usuários podem criar uma conta utilizando um endereço de e-mail e senha, co
 
 Os dados das despesas são armazenados no Firestore, garantindo a segurança e a integridade das informações. Os usuários podem adicionar, editar e excluir registros de despesas de forma dinâmica, proporcionando flexibilidade e controle total sobre suas finanças.
 
-> **OPCIONAL:** Se quiser utilizar um usuario de testes, já com dados cadastrados, utilize o login: bruno@email | senha: 123456
+> **OPCIONAL:** Se quiser utilizar um usuario de testes, já com dados cadastrados, utilize o login: bruno@email.com | senha: 123456
 
 <br>
 
